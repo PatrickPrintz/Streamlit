@@ -23,7 +23,6 @@ def load_data():
 
 # Load the data using the defined function
 df = load_data()
-df.columns
 
 geodf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df.Longitude, df.Latitude))
 geodf.crs = "EPSG:4326"
@@ -31,7 +30,7 @@ geodf_crs = geodf.to_crs("EPSG:4326")
 
 st.subheader("Spatial Distribution of Police Shootings, Public Schools and Neighborhoods")
     
-m = folium.Map(location=[geodf.Longitude.mean(), geodf.Latitude.mean()], zoom_start=11, tiles="CartoDB positron")
+m = folium.Map(location=[geodf.Longitude.mean(), geodf.Latitude.mean()], zoom_start=1, tiles="CartoDB positron")
 
 # Create a marker cluster
 marker_cluster = MarkerCluster().add_to(m)
