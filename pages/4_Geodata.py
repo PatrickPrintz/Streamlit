@@ -38,7 +38,7 @@ marker_cluster = MarkerCluster().add_to(m)
 
 # Loop through each police shooting and add it as a circle on the map within the marker cluster
 for _, row in geodf_crs.iterrows():
-     # Creating a pop-up message with some key information about the incident
+    # Creating a pop-up message with some key information about the incident
     popup_content = f"""
     Rank: {row['rank']}<br>
     Youtuber: {row['Youtuber']}<br>
@@ -49,15 +49,16 @@ for _, row in geodf_crs.iterrows():
     Year Created: {row['created_year']}<br>
     """
     popup = folium.Popup(popup_content, max_width=300)
-        
-folium.Circle(
-    location=[row['Latitude'], row['Longitude']],
-    radius=15,
-    color='blue',
-    fill=True,
-    fill_color='blue',
-    fill_opacity=0.4,
-    popup=popup
+
+    # Add a circle for each point
+    folium.Circle(
+        location=[row['Latitude'], row['Longitude']],
+        radius=15,
+        color='blue',
+        fill=True,
+        fill_color='blue',
+        fill_opacity=0.4,
+        popup=popup
     ).add_to(marker_cluster)
 
 ## Doesnt work yet!!
