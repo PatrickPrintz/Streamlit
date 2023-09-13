@@ -54,11 +54,11 @@ for _, row in geodf_crs.iterrows():
         location=[row['Latitude'], row['Longitude']],
         radius=15,
         color='blue',
-        fill=True,
+        fill=False,
         fill_color='blue',
         fill_opacity=0.4,
         popup=popup
     ).add_to(marker_cluster)
 
-## Doesnt work yet!!
 st_folium(m)
+## WORKS!!
