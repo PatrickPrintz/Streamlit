@@ -33,7 +33,7 @@ st.subheader("Spatial Distribution of Police Shootings, Public Schools and Neigh
 m = folium.Map(location=[geodf.Longitude.mean(), geodf.Latitude.mean()], zoom_start=1, tiles="CartoDB positron")
 
 # Create a marker cluster
-marker_cluster = MarkerCluster().add_to(m)
+#marker_cluster = MarkerCluster().add_to(m)
 
 # Loop through each police shooting and add it as a circle on the map within the marker cluster
 for _, row in geodf_crs.iterrows():
@@ -58,7 +58,7 @@ for _, row in geodf_crs.iterrows():
         fill_color='red',
         fill_opacity=0.4,
         popup=popup
-    ).add_to(marker_cluster)
+    ).add_to(m)
 
 st_folium(m)
 ## WORKS!!
