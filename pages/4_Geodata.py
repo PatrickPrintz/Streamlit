@@ -55,7 +55,7 @@ for _, row in geodf_crs.iterrows():
         radius=15,
         color='blue',
         fill=False,
-        fill_color='blue',
+        fill_color='red',
         fill_opacity=0.4,
         popup=popup
     ).add_to(marker_cluster)
