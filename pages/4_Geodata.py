@@ -28,9 +28,11 @@ geodf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df.Longitude, df.Latitu
 geodf.crs = "EPSG:4326"
 geodf_crs = geodf.to_crs("EPSG:4326")
 
+#CartoDB positron
+
 st.subheader("Spatial Distribution of Police Shootings, Public Schools and Neighborhoods")
     
-m = folium.Map(location=[df.Longitude.mean(), df.Latitude.mean()], zoom_start=1, tiles="CartoDB positron")
+m = folium.Map(location=[df.Longitude.mean(), df.Latitude.mean()], zoom_start=1, tiles="Stamen Watercolor")
 
 # Create a marker cluster
 marker_cluster = MarkerCluster().add_to(m)
