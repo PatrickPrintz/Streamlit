@@ -30,7 +30,7 @@ geodf_crs = geodf.to_crs("EPSG:4326")
 
 st.subheader("Spatial Distribution of Police Shootings, Public Schools and Neighborhoods")
     
-m = folium.Map(location=[geodf.Longitude.mean(), geodf.Latitude.mean()], zoom_start=1, tiles="CartoDB positron")
+m = folium.Map(location=[53, 9], zoom_start=3, tiles="CartoDB positron")
 
 # Create a marker cluster
 #marker_cluster = MarkerCluster().add_to(m)
@@ -53,7 +53,7 @@ for _, row in geodf_crs.iterrows():
     folium.Circle(
         location=[row['Latitude'], row['Longitude']],
         radius=15,
-        color='blue',
+        color='red',
         fill=False,
         fill_color='red',
         fill_opacity=0.4,
