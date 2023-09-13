@@ -32,7 +32,7 @@ geodf_crs = geodf.to_crs("EPSG:4326")
 
 st.subheader("Spatial Distribution of Police Shootings, Public Schools and Neighborhoods")
     
-m = folium.Map(location=[df.Longitude.mean(), df.Latitude.mean()], zoom_start=1, tiles="Mapbox Bright")
+m = folium.Map(location=[df.Longitude.mean(), df.Latitude.mean()], zoom_start=1, tiles="default")
 
 # Create a marker cluster
 marker_cluster = MarkerCluster().add_to(m)
