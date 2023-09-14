@@ -64,3 +64,4 @@ for _, row in geodf_crs.iterrows():
 
 st_folium(m)
 ## WORKS!!
+# %%
